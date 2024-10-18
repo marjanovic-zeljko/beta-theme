@@ -1,0 +1,120 @@
+<div class="max-basic-hero">
+    <div class="max-basic-hero__content">
+        <h1 class="max-basic-hero__title">{{ section.settings.title }}</h1>
+        <p class="max-basic-hero__description">{{ section.settings.description }}</p>
+        {% if section.settings.button_text %}
+            <a href="{{ section.settings.button_url }}" class="max-basic-hero__button">{{ section.settings.button_text }}</a>
+        {% endif %}
+    </div>
+</div>
+<style>
+    .max-basic-hero {
+        background-image: url({{ section.settings.image | image_url: width: 1920 }});
+        background-size: cover;
+        background-position: center;
+        padding: 100px 0;
+        @media screen and (max-width: 768px) {
+            padding: 50px 0;
+        }
+        @media screen and (min-width: 1440px) {
+            padding: 250px 0;
+        }
+    }
+</style>
+{% schema %}
+    {
+        "name": "Max Basic Hero",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "Title"
+            },
+            {
+                "type": "richtext",
+                "id": "description",
+                "label": "Description",
+                "default": "<p>Description</p>"
+            },
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Button Text",
+                "default": "Button Text"
+            },
+            {
+                "type": "url",
+                "id": "button_url",
+                "label": "Button URL"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Max Basic Hero"
+            }
+        ]
+    }
+{% endschema %}
+
+<style>
+    .max-basic-hero__content {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .max-basic-hero__title {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    .max-basic-hero__description {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+    .max-basic-hero__button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #000;
+        color: #fff;
+        text-decoration: none;
+    }
+    @media (max-width: 768px) {
+        .max-basic-hero {
+            padding: 50px 0;
+        }
+        .max-basic-hero__title {
+            font-size: 36px;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .max-basic-hero__title {
+            font-size: 28px;
+        }
+        .max-basic-hero__description {
+            font-size: 18px;
+        }
+    }
+    @media screen and (max-width: 320px) {
+        .max-basic-hero__title {
+            font-size: 24px;
+        }
+        .max-basic-hero__description {
+            font-size: 16px;
+        }
+    }
+    @media screen and (max-width: 240px) {
+        .max-basic-hero__title {
+            font-size: 20px;
+        }
+        .max-basic-hero__description {
+            font-size: 14px;
+        }
+    }
+
+</style>
