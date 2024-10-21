@@ -91,6 +91,7 @@
         "slide_3p6Ccn": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Queen-funny-zoom-background-for-meetings-min.webp",
             "title": "",
             "title_color": "#000000",
             "title_font_size": "48px",
@@ -114,6 +115,7 @@
         "slide_iqLLqD": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Untitled_design.png",
             "title": "",
             "title_color": "#000000",
             "title_font_size": "48px",
