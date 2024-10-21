@@ -87,6 +87,82 @@
     },
     "max_advanced_hero_kceCXk": {
       "type": "max-advanced-hero",
+      "blocks": {
+        "slide_3p6Ccn": {
+          "type": "slide",
+          "settings": {
+            "title": "",
+            "title_color": "#000000",
+            "title_font_size": "48px",
+            "title_line_height": "1.2",
+            "description": "",
+            "description_color": "#000000",
+            "description_font_size": "16px",
+            "description_line_height": "1.2",
+            "button_text": "",
+            "button_color": "#000000",
+            "button_background_color": "#000000",
+            "button_border_color": "#000000",
+            "button_border_width": "1px",
+            "button_border_style": "solid",
+            "button_border_radius": "0px",
+            "button_padding": "10px 20px",
+            "button_margin": "0px",
+            "link": ""
+          }
+        },
+        "slide_iqLLqD": {
+          "type": "slide",
+          "settings": {
+            "title": "",
+            "title_color": "#000000",
+            "title_font_size": "48px",
+            "title_line_height": "1.2",
+            "description": "",
+            "description_color": "#000000",
+            "description_font_size": "16px",
+            "description_line_height": "1.2",
+            "button_text": "",
+            "button_color": "#000000",
+            "button_background_color": "#000000",
+            "button_border_color": "#000000",
+            "button_border_width": "1px",
+            "button_border_style": "solid",
+            "button_border_radius": "0px",
+            "button_padding": "10px 20px",
+            "button_margin": "0px",
+            "link": ""
+          }
+        },
+        "slide_Qim9aE": {
+          "type": "slide",
+          "settings": {
+            "title": "",
+            "title_color": "#000000",
+            "title_font_size": "48px",
+            "title_line_height": "1.2",
+            "description": "",
+            "description_color": "#000000",
+            "description_font_size": "16px",
+            "description_line_height": "1.2",
+            "button_text": "",
+            "button_color": "#000000",
+            "button_background_color": "#000000",
+            "button_border_color": "#000000",
+            "button_border_width": "1px",
+            "button_border_style": "solid",
+            "button_border_radius": "0px",
+            "button_padding": "10px 20px",
+            "button_margin": "0px",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_3p6Ccn",
+        "slide_iqLLqD",
+        "slide_Qim9aE"
+      ],
       "settings": {
         "show_controls": true,
         "show_progress": true,
