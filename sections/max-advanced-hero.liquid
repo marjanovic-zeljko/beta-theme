@@ -1,35 +1,45 @@
 <div style="height: 40%;">
-    <section class="splide" id="advanced_hero_slideshow" aria-label="Splide Basic HTML Example">
-        <div class="splide__slider">
-        <div class="splide__track">
-                <ul class="splide__list">
-                    {% for block in section.blocks %}
-                        <li class="splide__slide">
-                            <img src="{{ block.settings.image | image_url: width: 1000 }}" alt="{{ block.settings.image.alt }}" width="100%" height="100%" style="object-fit: cover;">
-                            <div class="advanced_hero_slide_content">
-                                <h2>{{ block.settings.title }}</h2>
-                                <div class="advanced_hero_slide_description">{{ block.settings.description }}</div>
-                                <a href="{{ block.settings.link }}" class="advanced_hero_slide_button">{{ block.settings.button_text }}</a>
-                            </div>
-                        </li>
-                    {% endfor %}
-                </ul>
-        </div>
-        </div>
-        {% if section.settings.show_controls %}
-        <div class="splide__controls">
-        <button class="splide__toggle" type="button">
-            <span class="splide__toggle__play">Play</span>
-            <span class="splide__toggle__pause">Pause</span>
-            </button>
-        </div>
-        {% endif %}
-        {% if section.settings.show_progress %}
-        <div class="splide__progress">
-            <div class="splide__progress__bar">
+    <section>
+      <splide-slider 
+         class="splide" 
+         data-loop="loop"
+         data-perPage="1"
+         data-autoplay="{{ section.settings.autoplay }}" 
+         data-interval="{{ section.settings.interval }}"
+         data-pauseOnHover="{{ section.settings.pause_on_hover }}"
+
+      >
+         <div class="splide__slider">
+            <div class="splide__track">
+                    <ul class="splide__list">
+                        {% for block in section.blocks %}
+                            <li class="splide__slide">
+                                <img src="{{ block.settings.image | image_url: width: 1000 }}" alt="{{ block.settings.image.alt }}" width="100%" height="100%" style="object-fit: cover;">
+                                <div class="advanced_hero_slide_content">
+                                    <h2>{{ block.settings.title }}</h2>
+                                    <div class="advanced_hero_slide_description">{{ block.settings.description }}</div>
+                                    <a href="{{ block.settings.link }}" class="advanced_hero_slide_button">{{ block.settings.button_text }}</a>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
             </div>
-        </div>
-        {% endif %}
+            </div>
+            {% if section.settings.show_controls %}
+            <div class="splide__controls">
+            <button class="splide__toggle" type="button">
+                <span class="splide__toggle__play">Play</span>
+                <span class="splide__toggle__pause">Pause</span>
+                </button>
+            </div>
+            {% endif %}
+            {% if section.settings.show_progress %}
+            <div class="splide__progress">
+                <div class="splide__progress__bar">
+                </div>
+            </div>
+            {% endif %}
+      </splide-slider>
     </section>
 </div>
 <style>
@@ -66,7 +76,7 @@
         margin: {{ block.settings.button_margin }};
     }
 </style>
-<script>
+{% comment %} <script>
     new Splide("#advanced_hero_slideshow",{
         type:"loop",
         perPage: 1,
@@ -74,13 +84,25 @@
         interval:{{ section.settings.interval }}, //Autoplay interval in miliseconds.
         pauseOnHover:false //Good Feature pause on hover in default.
     }).mount();
-    </script>
+    </script> {% endcomment %}
 {% schema %}
     {
       "name": "Max Advanced Hero",
       "tag": "section",
       "class": "slideshow",
       "settings": [
+         {
+            "type": "checkbox",
+            "id": "pause_on_hover",
+            "label": "Pause slider on hover",
+            "default": false
+         },
+         {
+            "type": "checkbox",
+            "id": "loop",
+            "label": "Loop slider",
+            "default": false
+         },
         {
           "type": "checkbox",
           "id": "show_controls",
