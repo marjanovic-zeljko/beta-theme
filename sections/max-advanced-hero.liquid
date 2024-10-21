@@ -1,0 +1,261 @@
+<div style="height: 40%;">
+    <section class="splide" id="advanced_hero_slideshow" aria-label="Splide Basic HTML Example">
+        <div class="splide__slider">
+        <div class="splide__track">
+                <ul class="splide__list">
+                    {% for block in section.blocks %}
+                        <li class="splide__slide">
+                            <img src="{{ block.settings.image | image_url: width: 1000 }}" alt="{{ block.settings.image.alt }}" width="100%" height="100%" style="object-fit: cover;">
+                            <div class="advanced_hero_slide_content">
+                                <h2>{{ block.settings.title }}</h2>
+                                <div class="advanced_hero_slide_description">{{ block.settings.description }}</div>
+                                <a href="{{ block.settings.link }}" class="advanced_hero_slide_button">{{ block.settings.button_text }}</a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+        </div>
+        </div>
+        {% if section.settings.show_controls %}
+        <div class="splide__controls">
+        <button class="splide__toggle" type="button">
+            <span class="splide__toggle__play">Play</span>
+            <span class="splide__toggle__pause">Pause</span>
+            </button>
+        </div>
+        {% endif %}
+        {% if section.settings.show_progress %}
+        <div class="splide__progress">
+            <div class="splide__progress__bar">
+            </div>
+        </div>
+        {% endif %}
+    </section>
+</div>
+<style>
+    .advanced_hero_slide_content {
+        position: absolute;
+        top: {{ section.settings.content_position_top }};
+        left: {{ section.settings.content_position_left }};
+        width: {{ section.settings.content_position_width }};
+        height: {{ section.settings.content_position_height }};
+    }
+    .advanced_hero_slide_content h2 {
+        font-size: {{ block.settings.title_font_size }};
+        line-height: {{ block.settings.title_line_height }};
+        font-family: {{ settings.heading_font.family }};
+        color: {{ block.settings.title_color }};    
+    }
+    .advanced_hero_slide_content .advanced_hero_slide_description {
+        font-size: {{ block.settings.description_font_size }};
+        line-height: {{ block.settings.description_line_height }};
+        font-family: {{ settings.body_font.family }};
+        color: {{ block.settings.description_color }};    
+    }
+    .advanced_hero_slide_content .advanced_hero_slide_button {
+        font-size: {{ block.settings.button_font_size }};
+        line-height: {{ block.settings.button_line_height }};
+        font-family: {{ settings.body_font.family }};
+        color: {{ block.settings.button_color }};    
+        background-color: {{ block.settings.button_background_color }};
+        border-color: {{ block.settings.button_border_color }};
+        border-width: {{ block.settings.button_border_width }};
+        border-style: {{ block.settings.button_border_style }};
+        border-radius: {{ block.settings.button_border_radius }};
+        padding: {{ block.settings.button_padding }};
+        margin: {{ block.settings.button_margin }};
+    }
+</style>
+<script>
+    new Splide("#advanced_hero_slideshow",{
+        type:"loop",
+        perPage: 1,
+        autoplay:{{ section.settings.autoplay }}, //Autoplay also works just fine. 
+        interval:{{ section.settings.interval }}, //Autoplay interval in miliseconds.
+        pauseOnHover:false //Good Feature pause on hover in default.
+    }).mount();
+    </script>
+{% schema %}
+    {
+      "name": "Max Advanced Hero",
+      "tag": "section",
+      "class": "slideshow",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_controls",
+          "label": "Show Controls",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_progress",
+          "label": "Show Progress",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "Autoplay",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "interval",
+          "label": "Interval",
+          "default": "5000"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Slideshow"
+        },
+        {
+          "type": "text",
+          "id": "content_position_top",
+          "label": "Content Position Top",
+          "default": "50%"
+        },
+        {
+          "type": "text",
+          "id": "content_position_left",
+          "label": "Content Position Left",
+          "default": "50%"
+        },
+        {
+          "type": "text",
+          "id": "content_position_width",
+          "label": "Content Position Width",
+          "default": "50%"
+        },
+        {
+          "type": "text",
+          "id": "content_position_height",
+          "label": "Content Position Height",
+          "default": "50%"
+        }
+      ],
+      "blocks": [
+         {
+           "name": "Slide",
+           "type": "slide",
+           "settings": [
+             {
+               "type": "image_picker",
+               "id": "image",
+               "label": "Image"
+             },
+             {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+             },
+             {
+                "type": "color",
+                "id": "title_color",
+                "label": "Title Color",
+                "default": "#000000"
+             },
+             {
+                "type": "text",
+                "id": "title_font_size",
+                "label": "Title Font Size",
+                "default": "48px"
+             },
+             {
+                "type": "text",
+                "id": "title_line_height",
+                "label": "Title Line Height",
+                "default": "1.2"
+             },
+             {
+                "type": "richtext",
+                "id": "description",
+                "label": "Description"
+             },
+             {
+                "type": "color",
+                "id": "description_color",
+                "label": "Description Color",
+                "default": "#000000"
+             },
+             {
+                "type": "text",
+                "id": "description_font_size",
+                "label": "Description Font Size",
+                "default": "16px"
+             },
+             {
+                "type": "text",
+                "id": "description_line_height",
+                "label": "Description Line Height",
+                "default": "1.2"
+             },
+             {
+                "type": "text",
+                "id": "button_text",
+                "label": "Button Text"
+             },
+             {
+                "type": "color",
+                "id": "button_color",
+                "label": "Button Color",
+                "default": "#000000"
+             },
+             {
+                "type": "color",
+                "id": "button_background_color",
+                "label": "Button Background Color",
+                "default": "#000000"
+             },
+             {
+                "type": "color",
+                "id": "button_border_color",
+                "label": "Button Border Color",
+                "default": "#000000"
+             },
+             {
+                "type": "text",
+                "id": "button_border_width",
+                "label": "Button Border Width",
+                "default": "1px"
+             },
+             {
+                "type": "text",
+                "id": "button_border_style",
+                "label": "Button Border Style",
+                "default": "solid"
+             },
+             {
+                "type": "text",
+                "id": "button_border_radius",
+                "label": "Button Border Radius",
+                "default": "0px"
+             },
+             {
+                "type": "text",
+                "id": "button_padding",
+                "label": "Button Padding",
+                "default": "10px 20px"
+             },
+             {
+                "type": "text",
+                "id": "button_margin",
+                "label": "Button Margin",
+                "default": "0px"
+             },
+             {
+                "type": "url",
+                "id": "link",
+                "label": "Link"
+             }
+           ]
+         }
+       ],
+       "presets": [
+        {
+          "name": "Max Advanced Hero"
+        }
+       ]
+    }
+    {% endschema %}
