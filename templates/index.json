@@ -92,6 +92,52 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Queen-funny-zoom-background-for-meetings-min.webp",
+            "title": "1231345",
+            "title_color": "#fff",
+            "title_font_size": "48px",
+            "title_line_height": "1.2",
+            "description": "",
+            "description_color": "#000000",
+            "description_font_size": "16px",
+            "description_line_height": "1.2",
+            "button_text": "",
+            "button_color": "#000000",
+            "button_background_color": "#000000",
+            "button_border_color": "#000000",
+            "button_border_width": "1px",
+            "button_border_style": "solid",
+            "button_border_radius": "0px",
+            "button_padding": "10px 20px",
+            "button_margin": "0px",
+            "link": ""
+          }
+        },
+        "slide_Xn4Jbd": {
+          "type": "slide",
+          "settings": {
+            "title": "",
+            "title_color": "#000000",
+            "title_font_size": "48px",
+            "title_line_height": "1.2",
+            "description": "",
+            "description_color": "#000000",
+            "description_font_size": "16px",
+            "description_line_height": "1.2",
+            "button_text": "",
+            "button_color": "#000000",
+            "button_background_color": "#000000",
+            "button_border_color": "#000000",
+            "button_border_width": "1px",
+            "button_border_style": "solid",
+            "button_border_radius": "0px",
+            "button_padding": "10px 20px",
+            "button_margin": "0px",
+            "link": ""
+          }
+        },
+        "slide_qKMAUD": {
+          "type": "slide",
+          "settings": {
             "title": "",
             "title_color": "#000000",
             "title_font_size": "48px",
@@ -116,30 +162,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Untitled_design.png",
-            "title": "",
-            "title_color": "#000000",
-            "title_font_size": "48px",
-            "title_line_height": "1.2",
-            "description": "",
-            "description_color": "#000000",
-            "description_font_size": "16px",
-            "description_line_height": "1.2",
-            "button_text": "",
-            "button_color": "#000000",
-            "button_background_color": "#000000",
-            "button_border_color": "#000000",
-            "button_border_width": "1px",
-            "button_border_style": "solid",
-            "button_border_radius": "0px",
-            "button_padding": "10px 20px",
-            "button_margin": "0px",
-            "link": ""
-          }
-        },
-        "slide_Qim9aE": {
-          "type": "slide",
-          "settings": {
-            "title": "",
+            "title": "12356",
             "title_color": "#000000",
             "title_font_size": "48px",
             "title_line_height": "1.2",
@@ -162,17 +185,20 @@
       },
       "block_order": [
         "slide_3p6Ccn",
-        "slide_iqLLqD",
-        "slide_Qim9aE"
+        "slide_Xn4Jbd",
+        "slide_qKMAUD",
+        "slide_iqLLqD"
       ],
       "settings": {
-        "show_controls": true,
+        "pause_on_hover": false,
+        "loop": false,
+        "show_controls": false,
         "show_progress": true,
-        "autoplay": true,
-        "interval": "5000",
+        "autoplay": false,
+        "interval": "2500",
         "title": "",
-        "content_position_top": "50%",
-        "content_position_left": "50%",
+        "content_position_top": "75%",
+        "content_position_left": "80%",
         "content_position_width": "50%",
         "content_position_height": "50%"
       }
